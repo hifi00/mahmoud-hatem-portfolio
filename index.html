@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en" class="theme-light">
+<head>
+  <!-- Theme init: runs before first paint to avoid flash of wrong theme -->
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('mh-theme') || 'light'; } catch(e){}
+      document.documentElement.className = 'theme-' + t;
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mahmoud Hatem — Front-End Developer</title>
+  <meta name="description" content="Official portfolio of Mahmoud Hatem, Front-End Developer based in Cairo, Egypt. Specializing in responsive digital experiences with clarity, motion, and purpose." />
+  <meta name="author" content="Mahmoud Hatem" />
+
+  <!-- Browser Favicon & App Icons from Cropped Avatar -->
+  <link rel="icon" type="image/png" href="./assets/mahmoud-avatar.png" />
+  <link rel="apple-touch-icon" href="./assets/mahmoud-avatar.png" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Mahmoud Hatem — Front-End Developer" />
+  <meta property="og:description" content="Responsive interfaces built with precision, motion, and purpose." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/mahmoud-avatar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mahmoud Hatem — Front-End Developer" />
+  <meta name="twitter:description" content="Responsive interfaces built with precision, motion, and purpose." />
+  <meta name="twitter:image" content="./assets/mahmoud-avatar.png" />
+
+  <!-- Structured Data (JSON-LD) - Strict compliance: No 'student' reference -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahmoud Hatem",
+    "jobTitle": "Front-End Developer",
+    "url": "https://mahmoudhatem.dev",
+    "email": "mailto:mahmoudhatem720@gmail.com",
+    "telephone": "+201022485441",
+    "image": "./assets/mahmoud-avatar.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "Egypt"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Helwan International Technological University"
+    },
+    "sameAs": [
+      "https://github.com/Mahmoud72207",
+      "https://www.linkedin.com/in/mahmoud-hatem-ai"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Instrument Serif (H1 editorial) & Inter (UI/body) & JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===================================================
+       SITE HEADER / STICKY EDITORIAL NAVIGATION
+       All original pages present: About, Skills, Projects, Leadership, Education, Contact
+  ==================================================== -->
+  <header id="site-header" class="site-header" role="banner">
+    <div class="nav-wrap">
+      <!-- Brand Logo + Name -->
+      <a href="#hero" class="brand" aria-label="Mahmoud Hatem — Back to top">
+        <img src="./assets/mahmoud-avatar.png" alt="Mahmoud Hatem Logo" class="brand-avatar" />
+        <div class="brand-text">
+          <span class="brand-name">Mahmoud Hatem</span>
+          <span class="brand-role">Front-End Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation - EXACT Original Pages Requested -->
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <ul class="nav-links-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#leadership" class="nav-link">Leadership</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Controls -->
+      <div class="header-controls">
+        <div class="status-pill hide-mobile" title="Available for projects in Cairo & remote">
+          <span class="status-dot"></span>
+          <span class="status-label">Cairo, Egypt</span>
+        </div>
+
+        <button class="theme-toggle icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <button class="mobile-menu-btn icon-btn" type="button" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hline"></span>
+          <span class="hline"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div class="brand">
+          <img src="./assets/mahmoud-avatar.png" alt="Mahmoud Hatem" class="brand-avatar" />
+          <div class="brand-text">
+            <span class="brand-name">Mahmoud Hatem</span>
+            <span class="brand-role">Front-End Developer</span>
+          </div>
+        </div>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="drawer-footer">
+        <span>Cairo, Egypt · mahmoudhatem720@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ===================================================
+         01 · HERO SECTION (Cinematic Video Background)
+    ==================================================== -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video
+          class="hero-video"
+          src="./assets/mahmoud-reel.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="./assets/mahmoud-nobg.jpg"
+          preload="metadata"
+        ></video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-pill reveal-entry">
+          <span class="pill-dot"></span>
+          <span>Mahmoud Hatem · Front-End Developer</span>
+        </div>
+
+        <h1 class="hero-h1 reveal-entry" style="--delay:0.1s">
+          <span class="h1-line">Code that thinks</span>
+          <span class="h1-line italic">in design.</span>
+        </h1>
+
+        <p class="hero-sub reveal-entry" style="--delay:0.2s">
+          I design and build responsive digital experiences with clarity, motion, and purpose — from the first layout decision to the final interaction.
+        </p>
+
+        <div class="hero-ctas reveal-entry" style="--delay:0.3s">
+          <a href="#projects" class="btn-solid">
+            <span>Explore My Work</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="#contact" class="btn-glass">
+            <span>Let's Talk</span>
+          </a>
+        </div>
+
+        <div class="scroll-cue reveal-entry" style="--delay:0.45s" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span>Scroll to explore</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         02 · ABOUT SECTION (First-Person Bio & Cutout Showcase)
+    ==================================================== -->
+    <section id="about" class="about-section section-paper" aria-label="About Mahmoud Hatem">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow js-reveal">01 / About Me</span>
+          <h2 class="paper-h2 js-reveal" style="--d:0.06s">
+            My background &amp;<br /><em>creative philosophy.</em>
+          </h2>
+        </div>
+
+        <!-- Interactive Portrait Scene with Floating Kinetic Badges -->
+        <div class="about-hero-grid">
+          <!-- Left: Cutout Portrait with Ambient Glow & Floating Badges -->
+          <div class="portrait-stage-wrapper js-reveal" style="--d:0.1s">
+            <div class="portrait-ambient-glow" aria-hidden="true"></div>
+            <div class="concentric-frame-rings" aria-hidden="true">
+              <div class="c-ring ring-1"></div>
+              <div class="c-ring ring-2"></div>
+            </div>
+
+            <!-- Floating Kinetic Badges -->
+            <div class="kinetic-badge badge-top-left">
+              <span class="badge-dot"></span>
+              <span>Front-End Developer</span>
+            </div>
+            <div class="kinetic-badge badge-top-right">
+              <span>React.js &amp; Modern UI</span>
+            </div>
+            <div class="kinetic-badge badge-bottom-left">
+              <span>DEPI Team Leader</span>
+            </div>
+            <div class="kinetic-badge badge-bottom-right">
+              <span>Cairo, Egypt · HITU</span>
+            </div>
+
+            <!-- Crisp Cutout Portrait -->
+            <figure class="portrait-cutout-frame">
+              <img
+                src="./assets/mahmoud-nobg.jpg"
+                alt="Mahmoud Hatem — Front-End Developer"
+                class="portrait-cutout-img"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          </div>
+
+          <!-- Right: Objective & Detailed Bio (First-Person Voice) -->
+          <div class="about-content-col">
+            <div class="objective-card js-reveal" style="--d:0.14s">
+              <span class="meta-label">My Objective</span>
+              <p class="objective-text">
+                I am a dedicated React Front-End Developer with strong foundations in programming, computational problem-solving, and modern web development. Proficient in HTML5, CSS3, JavaScript (ES6+), and React.js, with additional experience in C++ and Python. I am passionate about building responsive, user-friendly, and maintainable web interfaces, continuously advancing my technical expertise through personal projects and my coordination as Team Leader in the DEPI React track.
+              </p>
+            </div>
+
+            <div class="about-quote-box js-reveal" style="--d:0.2s">
+              <span class="quote-mark">“</span>
+              <p class="quote-text">
+                I build responsive digital experiences where structure, motion, and detail work together — translating complex design requirements into clean, semantic, maintainable code.
+              </p>
+            </div>
+
+            <!-- Key Quick Specs -->
+            <div class="about-specs-grid js-reveal" style="--d:0.26s">
+              <div class="spec-item">
+                <span class="spec-label">Location</span>
+                <span class="spec-val">Cairo, Egypt</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Leadership</span>
+                <span class="spec-val">DEPI React Track Leader</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Availability</span>
+                <span class="spec-val">Open for Opportunities</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manifesto Pillars (First-Person Voice) -->
+        <div class="manifesto-pillars-row">
+          <div class="pillar-card js-reveal" style="--d:0.08s">
+            <span class="pillar-num">01</span>
+            <strong class="pillar-title">Structure</strong>
+            <span class="pillar-sub">Semantic foundations</span>
+            <p class="pillar-desc">
+              I prioritize clean HTML5 element landmarks that ensure accessibility, clarity, and robust cross-device maintainability.
+            </p>
+          </div>
+          <div class="pillar-card js-reveal" style="--d:0.16s">
+            <span class="pillar-num">02</span>
+            <strong class="pillar-title">Motion</strong>
+            <span class="pillar-sub">Kinetic intent</span>
+            <p class="pillar-desc">
+              I craft hardware-accelerated transitions and subtle micro-interactions that guide visual hierarchy without distracting.
+            </p>
+          </div>
+          <div class="pillar-card js-reveal" style="--d:0.24s">
+            <span class="pillar-num">03</span>
+            <strong class="pillar-title">Detail</strong>
+            <span class="pillar-sub">Crafted execution</span>
+            <p class="pillar-desc">
+              I test and fine-tune every breakpoint, focus state, touch target, and spacing unit before deploying to production.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         03 · SKILLS SECTION (Categorized Groups from CV)
+    ==================================================== -->
+    <section id="skills" class="skills-section section-paper" aria-label="Technical and Soft Skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow js-reveal">02 / My Skills</span>
+          <h2 class="paper-h2 js-reveal" style="--d:0.06s">Technical &amp;<br /><em>core competencies.</em></h2>
+          <p class="section-lead js-reveal" style="--d:0.12s">
+            Technologies and foundational disciplines I actively apply across my front-end implementations, team coordination, and algorithmic problem-solving.
+          </p>
+        </div>
+
+        <div id="skills-clusters" class="skills-open-rows"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         04 · PROJECTS SECTION (Selected Work & Interface Architecture)
+    ==================================================== -->
+    <section id="projects" class="projects-section section-paper" aria-label="Selected Projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow js-reveal">03 / Selected Work</span>
+          <h2 class="paper-h2 js-reveal" style="--d:0.06s">Documented<br /><em>implementations.</em></h2>
+          <p class="section-lead js-reveal" style="--d:0.12s">
+            Real-world web applications I engineered from Figma design specifications into semantic, accessible, and responsive codebases.
+          </p>
+        </div>
+
+        <!-- Injected Project Chapters -->
+        <div id="projects-container" class="projects-chapter-list"></div>
+
+        <!-- Interface Architecture Deep Dive (Scrollytelling 3-Phase Blueprint) -->
+        <div class="deep-dive-card js-reveal" style="--d:0.2s">
+          <div class="deep-dive-header">
+            <span class="eyebrow light-eyebrow">Interface Anatomy</span>
+            <h3 class="deep-dive-title">Exclusive E-commerce — Blueprint to Production</h3>
+            <p class="deep-dive-sub">
+              Dissecting my front-end architecture: from semantic landmarks to responsive grid systems and cloud deployment.
+            </p>
+          </div>
+
+          <div class="deep-dive-layers-grid">
+            <div class="layer-box">
+              <span class="layer-num">01</span>
+              <h4>Figma to Semantic HTML5</h4>
+              <p>Header navigation, catalog landmarks, and modal states converted into clean, accessible DOM structure.</p>
+            </div>
+            <div class="layer-box">
+              <span class="layer-num">02</span>
+              <h4>Responsive CSS3 &amp; Normalize</h4>
+              <p>Predictable box modeling, custom properties, and fluid typography tested across 320px to wide displays.</p>
+            </div>
+            <div class="layer-box">
+              <span class="layer-num">03</span>
+              <h4>Icons &amp; Vercel Deployment</h4>
+              <p>Integrated Font Awesome vector icons with automated continuous cloud hosting and instant CDN delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         05 · LEADERSHIP SECTION (DEPI Track Leader)
+    ==================================================== -->
+    <section id="leadership" class="leadership-section section-paper" aria-label="Leadership & Extracurricular Activities">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow js-reveal">04 / Leadership &amp; Activities</span>
+          <h2 class="paper-h2 js-reveal" style="--d:0.06s">Extracurricular<br /><em>team coordination.</em></h2>
+        </div>
+
+        <div class="leadership-card js-reveal" style="--d:0.1s">
+          <div class="leadership-meta">
+            <span class="badge-pill">DEPI React Track</span>
+            <span class="period-label">Active Coordination</span>
+          </div>
+          <h3 class="leadership-role">Team Leader — DEPI React Front-End Track</h3>
+          <p class="leadership-desc">
+            As Team Leader in the DEPI React Front-End Track, I lead and coordinate my front-end development team, organizing shared deliverables, facilitating peer code reviews, and steering collaborative problem-solving across core sprint tasks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         06 · EDUCATION SECTION (Academic Background & Languages)
+    ==================================================== -->
+    <section id="education" class="education-section section-paper" aria-label="Education & Languages">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow js-reveal">05 / Academic Background</span>
+          <h2 class="paper-h2 js-reveal" style="--d:0.06s">Education &amp;<br /><em>languages.</em></h2>
+        </div>
+
+        <div class="education-layout-grid">
+          <div class="edu-card js-reveal" style="--d:0.1s">
+            <span class="meta-label">Degree</span>
+            <h3 class="edu-degree">Bachelor of Technology in Artificial Intelligence</h3>
+            <p class="edu-institution">Helwan International Technological University (HITU)</p>
+            <p class="edu-location">Cairo, Egypt · Sep 2023 – Present</p>
+            <p class="edu-note">
+              My academic coursework covers Artificial Intelligence systems, computational logic, data structures, algorithms, and software engineering principles.
+            </p>
+          </div>
+
+          <div class="edu-card js-reveal" style="--d:0.18s">
+            <span class="meta-label">Languages</span>
+            <div class="languages-list">
+              <div class="lang-row">
+                <span class="lang-name">Arabic</span>
+                <span class="lang-badge">Native Proficiency</span>
+              </div>
+              <div class="lang-row">
+                <span class="lang-name">English</span>
+                <span class="lang-badge">Professional Working Proficiency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         07 · CONTACT SECTION (Direct Inquiry & Socials)
+    ==================================================== -->
+    <section id="contact" class="contact-section" aria-label="Contact Mahmoud Hatem">
+      <!-- Lucent-style concentric decorative rings -->
+      <div class="concentric-wrap" aria-hidden="true">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+
+      <div class="container contact-inner">
+        <!-- Left: Direct Info -->
+        <div class="contact-left js-reveal">
+          <span class="eyebrow light-eyebrow">06 / Get In Touch</span>
+          <h2 class="contact-h2">
+            Have a project<br />
+            <em>in mind?</em>
+          </h2>
+          <p class="contact-sub">
+            Let's build something thoughtful. Whether you need a front-end developer, a design-to-code implementation, or collaborative engineering, feel free to reach out directly.
+          </p>
+
+          <div class="contact-links-list">
+            <div class="contact-link-row">
+              <span class="cl-label">Email</span>
+              <div class="cl-action-wrap">
+                <a href="mailto:mahmoudhatem720@gmail.com" class="cl-val">mahmoudhatem720@gmail.com</a>
+                <button class="copy-btn" data-copy="mahmoudhatem720@gmail.com" aria-label="Copy email">Copy</button>
+              </div>
+            </div>
+
+            <div class="contact-link-row">
+              <span class="cl-label">Phone</span>
+              <div class="cl-action-wrap">
+                <a href="tel:+201022485441" class="cl-val">+20 102 248 5441</a>
+                <button class="copy-btn" data-copy="+201022485441" aria-label="Copy phone number">Copy</button>
+              </div>
+            </div>
+
+            <div class="contact-link-row no-link">
+              <span class="cl-label">Location</span>
+              <span class="cl-val">Cairo, Egypt · UTC+2</span>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com/Mahmoud72207" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="GitHub Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/mahmoud-hatem-ai" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="contact-right js-reveal" style="--d:0.12s">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="field">
+              <label for="name" class="field-label">Your Name</label>
+              <input type="text" id="name" name="name" class="field-input" placeholder="Mahmoud..." required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email" class="field-label">Email Address</label>
+              <input type="email" id="email" name="email" class="field-input" placeholder="you@domain.com" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="message" class="field-label">Project Outline</label>
+              <textarea id="message" name="message" class="field-textarea" rows="5" placeholder="Briefly describe your objectives, timeline, or requirements..." required></textarea>
+            </div>
+            <div class="field-submit">
+              <button type="submit" class="btn-submit">
+                <span>Send Message</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <div id="form-status" class="form-status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="./assets/mahmoud-avatar.png" alt="Mahmoud Hatem" class="footer-avatar" />
+        <span class="footer-name">Mahmoud Hatem — Front-End Developer</span>
+      </div>
+      <span class="footer-tech">Cairo, Egypt · HTML5 · CSS3 · ES6+ · React.js</span>
+      <a href="#hero" class="back-top" aria-label="Return to top of page">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        Top
+      </a>
+    </div>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
