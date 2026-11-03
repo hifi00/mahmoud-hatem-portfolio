@@ -7,7 +7,6 @@ A cinematic, responsive portfolio website for **Mahmoud Hatem**, a Front-End Dev
 - Dual light / dark theme (light is default, preference saved in `localStorage`)
 - Fully responsive across mobile, tablet, and desktop screens
 - Scroll-reveal animations with `IntersectionObserver`
-- Downloadable official CV / Resume in PDF format
 - Contact form with instant copy-to-clipboard for email and phone
 - Project showcase with live demo & source code links (Exclusive E-commerce)
 - Leadership, Education, and Categorized Skills sections
@@ -46,7 +45,7 @@ Then open **http://localhost:3000** in your browser.
 ├── src/
 │   ├── data.js         # Single source of truth for projects, skills & experience
 │   └── navigation.js   # Header, mobile drawer & theme switcher
-├── assets/             # Images, video reel & official PDF CV
+├── assets/             # Images & video reel
 ├── build.js            # Zero-dependency build script generating dist/
 ├── vercel.json         # Vercel deployment configuration
 └── server.js           # Lightweight local Node.js development server
